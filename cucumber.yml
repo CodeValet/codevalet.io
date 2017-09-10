@@ -1,0 +1,1 @@
+default: --format pretty --expand --format html --out reports/cucumber.html

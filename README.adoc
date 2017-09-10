@@ -1,0 +1,54 @@
+= Ruby Service Template
+
+This repository is a template for Code Valet backend services.
+
+
+== Makefile targets
+
+
+=== Packaging targets
+
+==== container
+
+Create the Docker container for the service.
+
+
+
+=== Miscellaneous targets
+
+==== all
+
+Default task, typically for building the container and running verification
+tasks.
+
+==== clean
+
+Remove built files and containers
+
+==== run
+
+Run a local version of the service on port 9292
+
+
+
+=== Verification targets
+
+==== analyze
+
+Run Rubocop static analysis.
+
+==== check
+
+Run all the verification tasks.
+
+==== check-container
+
+Validate that the built container is valid.
+
+==== cucumber
+
+Run Cucumber acceptance tests.
+
+==== spec
+
+Run RSpec unit tests.
