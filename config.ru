@@ -11,4 +11,4 @@ require 'server'
 use Rack::Static, :urls => ['/css', '/img', '/js'], :root => 'assets'
 use Raven::Rack
 
-run CodeValet::Server
+run CodeValet::App
