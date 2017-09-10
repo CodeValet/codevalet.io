@@ -1,0 +1,80 @@
+!!! XML
+!!!
+%html
+  %head
+    %meta{:name => 'referrer', :content => 'no-referrer'}/
+    %link{:rel => 'stylesheet',
+      :href => 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css',
+      :integrity => 'sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ',
+      :crossorigin => 'anonymous'}/
+    %script{:src => 'https://code.jquery.com/jquery-3.2.1.slim.min.js',
+      :integrity => 'sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN',
+      :crossorigin => 'anonymous'}
+    %script{:src => 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js',
+      :crossorigin => 'anonymous',
+      :integrity => 'sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn'}
+    %meta{:charset => 'utf-8'}/
+    %meta{:name => 'viewport',
+      :content => 'width=device-width, initial-scale=1, shrink-to-fit=no'}/
+    %link{:rel => 'icon', :type => 'image/ico', :href => '/images/favicon.ico'}/
+    %title
+      Code Valet
+  %body
+    %nav.navbar.navbar-inverse.bg-danger.navbar-toggleable
+      %a.navbar-brand{:href => '/'}
+        %img{:src => '/images/monkey-128.png',
+          :width => '50', :height => '50', :alt => 'Max the Code Monkey'}/
+        Code Valet
+      .navbar-collapse
+        .navbar-nav
+          %a.nav-item.nav-link{:href => '/doc'}
+            Docs
+          %a.nav-item.nav-link{:href => '/canary/'}
+            Canary
+          %a.nav-item.nav-link{:href => 'https://p.datadoghq.com/sb/5a00f415f-76d1154160'}
+            Status
+          - if env['warden'].user
+            %a.nav-item.active.nav-link{:href => '/profile'}
+              Profile
+            %a.nav-item.nav-link{:href => '/github/logout'}
+              Logout
+          - else
+            %a.nav-item.nav-link{:href => '/login'}
+              Log in
+
+    .container.mt-5
+      = yield
+
+    %hr/
+
+    .container
+      .row
+        .col-md-6
+          %p
+            &copy; 2017
+            %a{:href => 'https://github.com/rtyler'}
+              R. Tyler Croy.
+        .col-md-6
+          %p.text-right
+            %a{:href => 'https://twitter.com/codevalet'}
+              %img{:src => '/images/twitter-32.png',
+                  :alt => 'Code Valet on Twitter',
+                  :title => 'Code Valet on Twitter'}/
+            %a{:href => 'https://github.com/codevalet'}
+              %img{:src => '/images/github-32.png',
+                  :alt => 'Code Valet on GitHub',
+                  :title => 'Code Valet on GitHub'}/
+      .row
+        %p
+          Jenkins&reg; is a registered trademark of
+          %a{:href => 'http://spi-inc.org'}
+            Software in the Public Interest, Inc.
+
+    :javascript
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-104976589-1', 'auto');
+      ga('send', 'pageview');

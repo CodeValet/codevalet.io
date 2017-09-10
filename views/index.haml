@@ -1,14 +1,82 @@
-!!! XML
-!!!
-%html
-  %head
-    %meta{:name => 'referrer', :content => 'no-referrer'}/
-    %meta{:charset => 'utf-8'}/
-    %meta{:name => 'viewport',
-      :content => 'width=device-width, initial-scale=1, shrink-to-fit=no'}/
-    %link{:rel => 'icon', :type => 'image/ico', :href => '/images/favicon.ico'}/
-    %title
-      Code Valet
-  %body
-    %strong
-      Hello World
+.container
+  .row
+    .col-md-12
+      %h2
+        Meet Code Valet
+      %img{:src => '/images/monkey-128.png',
+           :title => 'Max the Code Monkey',
+           :align => :right}
+      %p
+        Code Valet is a radically transparent CI/CD service for GitHub users. Get 
+        instant feedback on bad commits, with minimal setup or configuration required.
+      .alert.alert-warning
+        Code Valet is currently in private alpha. If you’re interested in helping us alpha test, sign up for the Code Valet newsletter.
+        .col-md-8
+          %form{:action => "https://tinyletter.com/codevalet", :method => "post", :onsubmit => "window.open('https://tinyletter.com/codevalet', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true", :style => "padding:3px;text-align:center;", :target => "popupwindow"}
+            %input{:name => "embed", :type => "hidden", :value => "1"}/
+            .input-group
+              %input.form-control#tlemail{:placeholder => 'Enter email address',
+                :name => "email",
+                :type => "text"}/
+              %input.btn{:type => "submit", :value => "Subscribe"}/
+    .col-lg-8
+      %h2
+        Quickstart
+      %p
+        Integrating with Code Valet is easy. To get started, sign up with your GitHub 
+        account, select a project to build, and define how to build it, either visually 
+        or declaratively.
+    .col-sm-4
+      %h2
+        &nbsp;
+      %p
+        .dropdown
+          %button.btn.btn-secondary.dropdown-toggle{'data-toggle' => 'dropdown'}
+            Examples
+          .dropdown-menu
+            - monkeys.each do |monkey|
+              %a.dropdown-item{:href => "/u/#{monkey}"}
+                = monkey
+  .row
+    .col-md-12
+      %img.img-fluid{:src => '/images/create-new-pipeline.png'}
+
+  .row
+    .col-md-12
+      %h2
+        How it works
+      %p
+        Code Valet is powered by
+        %a{:href => 'https://jenkins.io'}
+          Jenkins&reg; 2
+        with
+        %a{:href => 'https://jenkins.io/doc/book/pipeline'}
+          Jenkins Pipeline
+        and
+        %a{:href => 'https://jenkins.io/project/blueocean'}
+          Blue Ocean
+        but no prior Jenkins knowledge is required to use Code Valet.
+      %p
+        Code Valet uses its own regularly updated "Jenkins
+        distribution" consisting of many commonly used
+        %a{:href => 'https://plugins.jenkins.io'}
+          plugins
+        built from their "master" branches.
+
+  .row
+    .col-md-12
+      %h2
+        Success stories
+      %p
+        Code Valet provides the Jenkins project with
+        rapid feedback based on real-world usage of Jenkins. This means rather
+        than following the Jenkins project's
+        %a{:href => 'https://en.wikipedia.org/wiki/Software_release_train'}
+          release-train model
+        Code Valet practices a more radical
+        %a{:href => 'https://en.wikipedia.org/wiki/Continuous_delivery'}
+          continuous delivery model.
+      %p
+        Using Code Valet ultimately helps the Jenkins community improve its support 
+        for wider variety of platforms by increasing the diversity of projects built 
+        by Jenkins.

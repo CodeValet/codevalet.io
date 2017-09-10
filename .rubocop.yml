@@ -9,6 +9,8 @@ Style/TrailingCommaInLiteral:
   EnforcedStyleForMultiline: 'consistent_comma'
 Metrics/MethodLength:
   Enabled: false
+Metrics/ClassLength:
+  Enabled: false
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*.rb'

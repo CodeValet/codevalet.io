@@ -2,7 +2,7 @@
 # Ruby service
 #
 
-CONTAINER_IMAGE=rtyler/codevalet-ruby-service
+CONTAINER_IMAGE=rtyler/codevalet-webapp
 CONTAINER_TAG=latest
 
 all: check container

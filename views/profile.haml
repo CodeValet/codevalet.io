@@ -1,0 +1,34 @@
+.container
+  .row
+    .col-md-10
+      %p
+        Hello #{user.login}
+      %p
+        - if monkeys.include? user.login
+          %a{:href => '/_to/jenkins'}
+            Log into Jenkins
+        - else
+          Sorry, no Jenkins environment has been provisioned for you. Please refer to the project's
+          %a{:href => 'https://github.com/codevalet/codevalet#joining-code-valet'}
+            README
+          for details on how to join.
+      - if admin
+        .row
+          %ul
+            - monkeys.each do |monkey|
+              %li
+                %a{:href => "/_to/jenkins?instance=#{monkey}"}
+                  = monkey
+.container
+  .row
+    .col-md-6
+      %h2
+        Recent Updates
+      %ul
+        %li
+          Nothing new to report!
+    .col-md-6
+      %h2
+        Usage
+      %p
+        Infinity!
